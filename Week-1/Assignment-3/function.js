@@ -5,7 +5,7 @@ function countAandB(input) {
     //         count += 1;
     //     }
     // }
-    count = input.filter(ele => ['a', 'b'].includes(ele)).length
+    var count = input.filter(ele => ['a', 'b'].includes(ele)).length
     return count;
 }
 function toNumber(input) {
