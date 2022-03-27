@@ -1,17 +1,19 @@
 function countAandB(input) {
-    var count = 0
-    for (var i = 0; i < input.length; i++) {
-        if (input[i] === "a" || input[i] === "b") {
-            count += 1;
-        }
-    }
+    // var count = 0
+    // for (var i = 0; i < input.length; i++) {
+    //     if (input[i] === "a" || input[i] === "b") {
+    //         count += 1;
+    //     }
+    // }
+    count = input.filter(ele => ['a', 'b'].includes(ele)).length
     return count;
 }
 function toNumber(input) {
-    var out = []
-    for (var i = 0; i < input.length; i++) {
-        out.push(input[i].charCodeAt(0) - 96)
-    }
+    // var out = []
+    // for (var i = 0; i < input.length; i++) {
+    //     out.push(input[i].charCodeAt(0) - 96)
+    // }
+    var out = input.map(ele => ele.charCodeAt(0) - 96);
     return out;
 }
 let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'c'];
