@@ -1,10 +1,12 @@
 function count(input) {
     const countObj = {}
-    for (let i = 0; i < input.length; i++) {
-        if (!Object.keys(countObj).includes(input[i])) {
-            countObj[input[i]] = 0;
+    for (let ele of input) {
+
+        if (!countObj[ele]) {
+            countObj[ele] = 0;
         }
-        countObj[input[i]] += 1;
+
+        countObj[ele] += 1;
     }
     return countObj;
 }
@@ -16,9 +18,11 @@ console.log(count(input1));
 function groupByKey(input) {
     const sumByKey = {};
     for (let i = 0; i < input.length; i++) {
-        if (!Object.keys(sumByKey).includes(input[i].key)) {
+
+        if (!sumByKey[input[i].key]) {
             sumByKey[input[i].key] = 0;
         }
+
         sumByKey[input[i].key] += input[i].value;
     }
     return sumByKey;
