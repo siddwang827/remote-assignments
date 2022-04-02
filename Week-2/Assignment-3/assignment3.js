@@ -11,9 +11,21 @@ function count(input) {
 let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x'];
 console.log(count(input1));
 // should print {a:3, b:1, c:2, x:1}
+
+
 function groupByKey(input) {
-    // your code here
+    const sumByKey = {};
+    for (let i = 0; i < input.length; i++) {
+        if (!Object.keys(sumByKey).includes(input[i].key)) {
+            sumByKey[input[i].key] = 0;
+        }
+        sumByKey[input[i].key] += input[i].value;
+    }
+    return sumByKey;
+
 }
+
+
 let input2 = [
     { key: 'a', value: 3 },
     { key: 'b', value: 1 },
