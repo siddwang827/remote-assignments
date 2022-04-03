@@ -1,5 +1,5 @@
 function max(numbers) {
-    let maxNum = 0;
+    let maxNum;
     for (let i = 0; i < numbers.length; i++) {
         if (numbers[i] > maxNum) {
             maxNum = numbers[i];
