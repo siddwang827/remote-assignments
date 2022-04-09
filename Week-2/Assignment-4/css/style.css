@@ -103,11 +103,6 @@ a {
 
 }
 
-.hidden {
-	display: none;
-	margin-top: 4rem;
-}
-
 .show {
 	display: flex;
 	justify-content: center;
@@ -132,6 +127,7 @@ a {
 .show h3 {
 	background-color: bisque;
 	padding: 1rem;
+	border-radius: 10px;
 }
 
 /* =================================
