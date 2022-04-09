@@ -1,5 +1,12 @@
 const express = require('express');
 const app = express();
+const cookieParser = require('cookie-parser');
+
+// middleware
+app.use(cookieParser());
+
+// static
+app.use('/static', express.static('public'));
 
 //routes
 const mainRoutes = require('./routes')
@@ -7,6 +14,7 @@ const dataRoutes = require('./routes/data')
 
 app.use(mainRoutes);
 app.use('/data', dataRoutes)
+
 
 
 
