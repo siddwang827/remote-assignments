@@ -5,20 +5,16 @@ router.get('/', (req, res) => {
     let number = req.query.number;
 
     if (!number) {
-        res.send('<h1>Lack of Parameter</h1>');
+        res.send('Lack of Parameter');
     } else if (isNaN(number)) {
-        res.send('<h1>The parameter should be a positive number</h1>');
+        res.send('The parameter should be a positive number');
     }
 
     number = parseInt(number)
     const numberSum = (1 + number) * number / 2
 
-    res.send(`<h1>the result is ${numberSum}</h1>`)
-
-
+    res.send(`The result is ${numberSum}`)
 })
-
-
 
 
 

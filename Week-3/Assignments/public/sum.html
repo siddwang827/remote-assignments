@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sum Assignment</title>
+</head>
+
+<body>
+    <div>
+        <h1>Please enter an positive integer</h1>
+        <input id="number" name="number">
+        <button id="btn-sum">Submit</button>
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        const btnSum = document.getElementById('btn-sum');
+        btnSum.addEventListener('click', () => {
+            const sumRequest = new XMLHttpRequest();
+            var number = document.getElementById('number');
+            sumRequest.onload = function () {
+                if (sumRequest.status === 200) {
+                    document.getElementById('result').innerHTML = `${sumRequest.responseText}`
+                }
+                number.value = '';
+            }
+            sumRequest.open('GET', `/data?number=${number.value}`);
+            sumRequest.send();
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 // static
-app.use('/static', express.static('public'));
+app.use(express.static('public'));
 
 //routes
 const mainRoutes = require('./routes')
