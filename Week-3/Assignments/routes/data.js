@@ -8,12 +8,12 @@ router.get('/', (req, res) => {
         res.send('Lack of Parameter');
     } else if (isNaN(number)) {
         res.send('The parameter should be a positive number');
+    } else {
+        number = parseInt(number)
+        const numberSum = (1 + number) * number / 2
+
+        res.send(`The result is ${numberSum}`)
     }
-
-    number = parseInt(number)
-    const numberSum = (1 + number) * number / 2
-
-    res.send(`The result is ${numberSum}`)
 })
 
 

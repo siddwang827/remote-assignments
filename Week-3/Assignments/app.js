@@ -1,12 +1,16 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 // middleware
 app.use(cookieParser());
-
+app.use(bodyParser.urlencoded({ extended: false }));
 // static
 app.use(express.static('public'));
+
+// template engine
+app.set("view engine", "pug");
 
 //routes
 const mainRoutes = require('./routes')
