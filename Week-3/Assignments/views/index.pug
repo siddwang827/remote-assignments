@@ -1,11 +1,14 @@
 doctype html
 html(lang="en")
   head
-    title Login page
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Cookie Check
   body
-      h1 Welcome User! 
-      p Please Enter Your Name! 
-      form(action='trackName' method="post")
-        input(id="username" name="username")
-        button(type='submit') submit
+    h1 Welcome User! 
+    p Please Enter Your Name! 
+    form(action=`trackName?name=${username}` method="get")
+      input(id="username" name="username")
+      button(type='submit') login
 

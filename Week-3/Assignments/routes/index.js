@@ -11,15 +11,22 @@ router.get('/myName', (req, res) => {
     if (!username) {
         res.render('index')
     } else {
-        res.send(`<h1>Hi, ${username}!</h1>`)
+        res.render('login', { username })
     }
 })
 
-router.post('/trackName', (req, res) => {
-    console.log(req.body);
-    res.cookie('username', req.body.username);
+// add cookie
+router.get('/trackName', (req, res) => {
+    console.log(req.query.username)
+    res.cookie('username', req.query.username);
     res.redirect('/myName')
 
+})
+
+// clear cookie
+router.post('/trackName', (req, res) => {
+    res.clearCookie('username')
+    res.redirect('/myName')
 })
 
 module.exports = router
