@@ -1,0 +1,37 @@
+extend layout.pug
+block css
+  link(rel="stylesheet", href="/stylesheet/style.css")
+
+block title 
+  title Log in page
+
+block content
+  body 
+    if errorMessage
+      h1 #{errorMessage}
+
+    ul
+      li Login 
+      li Sign up
+    p Log In
+    form#form-login(action="/login", method="POST") 
+      label(for='login-email') Email: 
+      input#email(type="text" name="email") 
+      label(for='login-password') Password:
+      input#password(type="text" name="password")
+      button(type='submit') Login
+
+    P Sign Up
+    form#form-signup(action="/signup", method="POST") 
+      label(for='signup-email') Email: 
+      input#email(type="text" name="email" ) 
+      label(for='signup-passwrod') Password:
+      input#password(type="text" name="password")
+      button(type='submit') Sign up
+
+    
+    #switch 
+      p Need an account? #[a.switch#signup(href="/") SIGN UP]
+      p Already a user? #[a.switch#login(href="/") LOGIN]
+
+  script(src="js/home.js")

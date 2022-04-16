@@ -1,0 +1,13 @@
+extend layout.pug
+block css
+	link(rel="stylesheet", href="/stylesheet/style.css")
+
+block title 
+	title Member page
+
+block content
+	body 
+		h1 Welcome, #{email } !
+		h2 Hope you enjoy the experience! 
+		form(action="/logout" method="GET")
+			button(type="submit") Log out 
