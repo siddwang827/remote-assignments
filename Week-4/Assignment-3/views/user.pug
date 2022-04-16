@@ -10,9 +10,9 @@ block content
     if errorMessage
       h1 #{errorMessage}
 
-    ul
-      li Login 
-      li Sign up
+    //- ul
+    //-   li Login 
+    //-   li Sign up
     p Log In
     form#form-login(action="/login", method="POST") 
       label(for='login-email') Email: 
@@ -30,8 +30,8 @@ block content
       button(type='submit') Sign up
 
     
-    #switch 
-      p Need an account? #[a.switch#signup(href="/") SIGN UP]
-      p Already a user? #[a.switch#login(href="/") LOGIN]
+  //-   #switch 
+  //-     p Need an account? #[a.switch#signup(href="/") SIGN UP]
+  //-     p Already a user? #[a.switch#login(href="/") LOGIN]
 
-  script(src="js/home.js")
+  //- script(src="js/home.js")
