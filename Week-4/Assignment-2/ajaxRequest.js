@@ -26,7 +26,7 @@ function render(data) {
 
 btnAjax.addEventListener('click', () => {
     const urlAjax = document.getElementById('url-ajax');
-    ajax(urlAjax.value, response => render(response));
+    ajax(urlAjax.value, render);
 
 
 
