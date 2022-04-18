@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+
+.flex-col {
+    margin: 0 15px 0;
+}
