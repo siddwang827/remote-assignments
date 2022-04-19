@@ -2,6 +2,7 @@ const url = 'https://appworks-school.github.io/Remote-Aassigiment-Data/products'
 const btnCallback = document.getElementById('btn-callback')
 const btnPromise = document.getElementById('btn-promise')
 const btnFetch = document.getElementById('btn-fetch')
+const btnAsync = document.getElementById('btn-async')
 const btnClear = document.getElementById('clear')
 const result = document.querySelector('.result ');
 
@@ -44,7 +45,7 @@ function ajaxPromise(src) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', src);
     xhr.onload = () => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
+      if (xhr.status === 200) {
         resolve(JSON.parse(xhr.responseText));
       } else {
         reject(Error(xhr.statusText))
@@ -78,10 +79,19 @@ btnFetch.addEventListener('click', () => {
 
 // async & await
 
+async function ajaxAsync(url) {
+  try {
+    const response = await fetch(url);
+    return await response.json();
+  } catch (error) {
+    throw (error)
+  }
+}
 
-
-
-
+btnAsync.addEventListener('click', async () => {
+  const product = await ajaxAsync(url)
+  render(product)
+});
 
 
 
